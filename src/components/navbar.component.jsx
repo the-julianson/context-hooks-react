@@ -1,32 +1,29 @@
-import React from 'react';
+import React from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 
-class Navbar extends React.Component {
-    
-    //The static keyword defines a static method for a class. 
-    //Static methods aren't called on instances of the class.
-    // Instead, they're called on the class itself.
-
-    // whit this we are saying, go and look for any context provider and attach 
-    //it's props to me, so I can pass it down to this component.
-    static contextType = ThemeContext;
-    render() { 
-        //console.log(this.context);
-        // destructure to access the variables
-        const {isLightTheme, light, dark} = this.context;
-
+const Navbar = () => {
+  return (
+    // We define a consumer, that consumes a context that returns our JSX
+    // inside the context are the props, we dont use this in here.
+    // we can consume multiple context in one component in these way.
+    // we can also use it in functional components
+    <ThemeContext.Consumer>
+      {context => {
+        const { isLightTheme, light, dark } = context;
         const theme = isLightTheme ? light : dark;
-        return ( 
-            <nav style={{ background: theme.ui, color: theme.syntax}}>
-                <h1>Context App</h1>
-                <ul >
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                </ul>
-            </nav>
-         );
-    }
-}
- 
+        return (
+          <nav style={{ background: theme.ui, color: theme.syntax }}>
+            <h1>Context App</h1>
+            <ul>
+              <li>Home</li>
+              <li>About</li>
+              <li>Contact</li>
+            </ul>
+          </nav>
+        );
+      }}
+    </ThemeContext.Consumer>
+  );
+};
+
 export default Navbar;
