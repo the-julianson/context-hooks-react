@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 
 // package for ids
 import  uuid  from "uuid/dist/v1";
+import NewSongFrom from './NewSongForm.component';
 
 const SongList = () => {
     const [songs, setSongs] = useState([
@@ -11,8 +12,8 @@ const SongList = () => {
     ]);      
 
     // setSongs will change and completeley replace
-    const addSong = () => {
-        setSongs([...songs, {title: "new song", id: uuid()}])
+    const addSong = (title) => {
+        setSongs([...songs, {title: title, id: uuid()}])
     }
     return ( 
     <div className="song-list">
@@ -20,7 +21,7 @@ const SongList = () => {
             {songs.map(song => 
             <li key={song.id}>{song.title}</li>)}
         </ul>
-        <button onClick={addSong}>Add song</button>
+        <NewSongFrom addSong={addSong}/>
     </div> );
 }
  
