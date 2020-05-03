@@ -4,16 +4,20 @@ import Navbar from './components/navbar.component';
 import BookList from './components/booklist.component';
 import ThemeContextProvider from './contexts/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
+import AuthContextProvider from './contexts/AuthContext';
 
-//Navbar and BookList are attached to the props of the ThemeContextProvider (father) 
-//so we have to pass the props down to the children {this.props.children}
+// i can choose to place the AuthContext provider around the ThemeContextProvider, 
+// also, if for example, just my navbar needs to now about the context, then it will only
+// go there
 function App() {
   return (
     <div className="App">
       <ThemeContextProvider>
+        <AuthContextProvider>
       <Navbar/>
       <BookList/>
       <ThemeToggle/>
+      </AuthContextProvider>
       </ThemeContextProvider>
     </div>
   );
