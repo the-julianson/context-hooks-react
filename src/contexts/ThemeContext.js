@@ -1,9 +1,9 @@
-import React, { createContext, Component } from "react";
+import React, { createContext, useState } from "react";
 
 // We will use this one first in Navbar
 export const ThemeContext = createContext();
 
-class ThemeContextProvider extends Component {
+class ThemeContextProvider extends React.Component {
   state = {
     isLightTheme: true,
     light: { syntax: "#555", ui: "#ddd", bg: "#eee" },
@@ -28,3 +28,26 @@ class ThemeContextProvider extends Component {
 }
 
 export default ThemeContextProvider;
+
+// const ThemeContextProvider = (props) => {
+
+//   const [theme, setTheme] = useState([
+//     {
+//       isLightTheme: true,
+//       light: { syntax: "#555", ui: "#ddd", bg: "#eee" },
+//       dark: { syntax: "#ddd", ui: "#333", bg: "#555" }
+//     }
+//   ])
+
+//   const toggleTheme = () => {
+//     setTheme({isLightTheme: !props.isLightTheme})
+//   }
+  
+//   return ( 
+//     <ThemeContext.Provider value={{...props.theme, toggleTheme}}>
+//       {props.children}
+//     </ThemeContext.Provider>
+//    );
+// }
+ 
+// export default ThemeContextProvider;
