@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/context-hooks-react/static/css/main.a89b02a4.chunk.css",
+    "main.js": "/context-hooks-react/static/js/main.59ae2bda.chunk.js",
+    "main.js.map": "/context-hooks-react/static/js/main.59ae2bda.chunk.js.map",
+    "runtime-main.js": "/context-hooks-react/static/js/runtime-main.ec297ada.js",
+    "runtime-main.js.map": "/context-hooks-react/static/js/runtime-main.ec297ada.js.map",
+    "static/js/2.598565e9.chunk.js": "/context-hooks-react/static/js/2.598565e9.chunk.js",
+    "static/js/2.598565e9.chunk.js.map": "/context-hooks-react/static/js/2.598565e9.chunk.js.map",
+    "index.html": "/context-hooks-react/index.html",
+    "precache-manifest.1445e51903cda11c9f912b77ad9b83c0.js": "/context-hooks-react/precache-manifest.1445e51903cda11c9f912b77ad9b83c0.js",
+    "service-worker.js": "/context-hooks-react/service-worker.js",
+    "static/css/main.a89b02a4.chunk.css.map": "/context-hooks-react/static/css/main.a89b02a4.chunk.css.map",
+    "static/js/2.598565e9.chunk.js.LICENSE.txt": "/context-hooks-react/static/js/2.598565e9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ec297ada.js",
+    "static/js/2.598565e9.chunk.js",
+    "static/css/main.a89b02a4.chunk.css",
+    "static/js/main.59ae2bda.chunk.js"
+  ]
+}
