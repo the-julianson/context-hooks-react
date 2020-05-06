@@ -2,20 +2,18 @@ import React, { useContext, useState } from "react";
 import { BookContext } from "../contexts/BookContext";
 
 const NewBookForm = () => {
-  const { addBook } = useContext(BookContext);
+  const { dispatch } = useContext(BookContext);
 
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
 
   const handleSubmit = (e) => {
       e.preventDefault();
-      
-      addBook(title, author);
+      //instead of taking specific functions, it will take a general function: dispatch, that takes the type and the payload
+
+      dispatch({type:"ADD_BOOK", book:{title, author}})
       setTitle('');
       setAuthor('');
-      //console.log(title, author);
-      //prevents default helps to avoid refreshing the page. It will never work 
-      // because react always updates the page when we re-render
   }
   return (
     <form onSubmit={handleSubmit}>
